@@ -1,0 +1,507 @@
+Individual,Trial,Repetition,Result_type,Result,Sex,SVL,Mass
+CATEST23,Act,A,seconds_moving,140,F,745,197.8
+CATEST23,Act,B,seconds_moving,215,F,745,197.8
+CATEST6,Act,A,seconds_moving,254,M,971,771
+CATEST17,Act,A,seconds_moving,600,F,775,258.2
+CATEST7,Act,B,seconds_moving,606,M,908,406
+CATEST24,Act,A,seconds_moving,959,F,741,276.4
+CATEST6,Act,B,seconds_moving,1203,M,971,771
+CATEST12,Act,B,seconds_moving,1352,M,792,283
+CATEST17,Act,B,seconds_moving,1922,F,775,258.2
+CATEST5,Act,A,seconds_moving,2064,F,82.2,335
+CATEST13,Act,A,seconds_moving,2181,M,696,287
+CATEST19,Act,B,seconds_moving,2304,M,769,215.7
+CATEST12,Act,A,seconds_moving,2347,M,792,283
+CATEST16,Act,A,seconds_moving,2414,M,699,232
+CATEST18,Act,A,seconds_moving,2729,F,684,156.8
+CATEST9,Act,B,seconds_moving,2769,M,800,384.1
+CATEST24,Act,B,seconds_moving,3191,F,741,276.4
+CATEST11,Act,A,seconds_moving,3606,F,830,325
+CATEST8,Act,B,seconds_moving,3773,M,920,454
+CATEST7,Act,A,seconds_moving,3786,M,908,406
+CATEST11,Act,B,seconds_moving,3962,F,830,325
+CATEST13,Act,B,seconds_moving,4259,M,696,287
+CATEST5,Act,B,seconds_moving,4359,F,82.2,335
+CATEST2,Act,A,seconds_moving,4375,F,782,232
+CATEST21,Act,A,seconds_moving,4628,M,831,359.6
+CATEST14,Act,A,seconds_moving,4798,M,679,159
+CATEST2,Act,B,seconds_moving,5010,F,782,232
+CATEST19,Act,A,seconds_moving,5047,M,769,215.7
+CATEST18,Act,B,seconds_moving,5139,F,684,156.8
+CATEST15,Act,A,seconds_moving,5384,M,933,454.3
+CATEST3,Act,A,seconds_moving,5423,M,840,382
+CATEST15,Act,B,seconds_moving,5487,M,933,454.3
+CATEST14,Act,B,seconds_moving,5796,M,679,159
+CATEST22,Act,A,seconds_moving,5849,M,702,150.6
+CATEST22,Act,B,seconds_moving,5875,M,702,150.6
+CATEST16,Act,B,seconds_moving,6089,M,699,232
+CATEST10,Act,A,seconds_moving,6175,M,1002,772
+CATEST9,Act,A,seconds_moving,6593,M,800,384.1
+CATEST21,Act,B,seconds_moving,6714,M,831,359.6
+CATEST10,Act,B,seconds_moving,7221,M,1002,772
+CATEST8,Act,A,seconds_moving,7290,M,920,454
+CATEST4,Act,A,seconds_moving,7357,M,890,441
+CATEST3,Act,B,seconds_moving,8179,M,840,382
+CATEST4,Act,B,seconds_moving,8555,M,890,441
+CATEST20,Act,B,seconds_moving,10509,M,687,193.6
+CATEST20,Act,A,seconds_moving,11222,M,687,193.6
+CATEST15,Agg1,A,score_behavior,0,M,933,454.3
+CATEST2,Agg1,A,score_behavior,0,F,782,232
+CATEST3,Agg1,A,score_behavior,0,M,840,382
+CATEST3,Agg1,B,score_behavior,0,M,840,382
+CATEST4,Agg1,A,score_behavior,0,M,890,441
+CATEST5,Agg1,A,score_behavior,0,F,82.2,335
+CATEST7,Agg1,A,score_behavior,0,M,908,406
+CATEST7,Agg1,B,score_behavior,0,M,908,406
+CATEST9,Agg1,A,score_behavior,0,M,800,384.1
+CATEST10,Agg1,A,score_behavior,0,M,1002,772
+CATEST10,Agg1,B,score_behavior,0,M,1002,772
+CATEST12,Agg1,B,score_behavior,0,M,792,283
+CATEST14,Agg1,A,score_behavior,0,M,679,159
+CATEST14,Agg1,B,score_behavior,0,M,679,159
+CATEST15,Agg1,B,score_behavior,0,M,933,454.3
+CATEST2,Agg1,B,score_behavior,1,F,782,232
+CATEST4,Agg1,B,score_behavior,1,M,890,441
+CATEST5,Agg1,B,score_behavior,1,F,82.2,335
+CATEST6,Agg1,A,score_behavior,1,M,971,771
+CATEST6,Agg1,B,score_behavior,1,M,971,771
+CATEST8,Agg1,A,score_behavior,1,M,920,454
+CATEST8,Agg1,B,score_behavior,1,M,920,454
+CATEST9,Agg1,B,score_behavior,1,M,800,384.1
+CATEST11,Agg1,A,score_behavior,1,F,830,325
+CATEST11,Agg1,B,score_behavior,1,F,830,325
+CATEST12,Agg1,A,score_behavior,1,M,792,283
+CATEST13,Agg1,A,score_behavior,1,M,696,287
+CATEST13,Agg1,B,score_behavior,1,M,696,287
+CATEST16,Agg1,A,score_behavior,1,M,699,232
+CATEST16,Agg1,B,score_behavior,1,M,699,232
+CATEST17,Agg1,A,score_behavior,1,F,775,258.2
+CATEST17,Agg1,B,score_behavior,1,F,775,258.2
+CATEST18,Agg1,A,score_behavior,1,F,684,156.8
+CATEST18,Agg1,B,score_behavior,1,F,684,156.8
+CATEST19,Agg1,A,score_behavior,1,M,769,215.7
+CATEST19,Agg1,B,score_behavior,1,M,769,215.7
+CATEST20,Agg1,A,score_behavior,1,M,687,193.6
+CATEST20,Agg1,B,score_behavior,1,M,687,193.6
+CATEST21,Agg1,A,score_behavior,1,M,831,359.6
+CATEST21,Agg1,B,score_behavior,1,M,831,359.6
+CATEST22,Agg1,A,score_behavior,1,M,702,150.6
+CATEST22,Agg1,B,score_behavior,1,M,702,150.6
+CATEST23,Agg1,A,score_behavior,1,F,745,197.8
+CATEST23,Agg1,B,score_behavior,1,F,745,197.8
+CATEST24,Agg1,A,score_behavior,1,F,741,276.4
+CATEST24,Agg1,B,score_behavior,1,F,741,276.4
+CATEST4,Agg2,A,seconds_rattling,3,M,890,441
+CATEST14,Agg2,A,seconds_rattling,4,M,679,159
+CATEST14,Agg2,B,seconds_rattling,4,M,679,159
+CATEST15,Agg2,A,seconds_rattling,4,M,933,454.3
+CATEST15,Agg2,B,seconds_rattling,4,M,933,454.3
+CATEST16,Agg2,B,seconds_rattling,4,M,699,232
+CATEST18,Agg2,A,seconds_rattling,4,F,684,156.8
+CATEST16,Agg2,A,seconds_rattling,5,M,699,232
+CATEST7,Agg2,A,seconds_rattling,6,M,908,406
+CATEST17,Agg2,A,seconds_rattling,7,F,775,258.2
+CATEST3,Agg2,A,seconds_rattling,8,M,840,382
+CATEST20,Agg2,A,seconds_rattling,8,M,687,193.6
+CATEST6,Agg2,A,seconds_rattling,9,M,971,771
+CATEST12,Agg2,A,seconds_rattling,12,M,792,283
+CATEST12,Agg2,B,seconds_rattling,17,M,792,283
+CATEST24,Agg2,A,seconds_rattling,23,F,741,276.4
+CATEST22,Agg2,A,seconds_rattling,27,M,702,150.6
+CATEST13,Agg2,B,seconds_rattling,28,M,696,287
+CATEST18,Agg2,B,seconds_rattling,31,F,684,156.8
+CATEST20,Agg2,B,seconds_rattling,31,M,687,193.6
+CATEST4,Agg2,B,seconds_rattling,32,M,890,441
+CATEST10,Agg2,B,seconds_rattling,46,M,1002,772
+CATEST11,Agg2,B,seconds_rattling,46,F,830,325
+CATEST10,Agg2,A,seconds_rattling,51,M,1002,772
+CATEST24,Agg2,B,seconds_rattling,53,F,741,276.4
+CATEST8,Agg2,B,seconds_rattling,55,M,920,454
+CATEST23,Agg2,B,seconds_rattling,55,F,745,197.8
+CATEST3,Agg2,B,seconds_rattling,61,M,840,382
+CATEST5,Agg2,B,seconds_rattling,63,F,82.2,335
+CATEST2,Agg2,A,seconds_rattling,64,F,782,232
+CATEST5,Agg2,A,seconds_rattling,64,F,82.2,335
+CATEST7,Agg2,B,seconds_rattling,65,M,908,406
+CATEST9,Agg2,B,seconds_rattling,68,M,800,384.1
+CATEST22,Agg2,B,seconds_rattling,73,M,702,150.6
+CATEST8,Agg2,A,seconds_rattling,74,M,920,454
+CATEST21,Agg2,A,seconds_rattling,75,M,831,359.6
+CATEST11,Agg2,A,seconds_rattling,85,F,830,325
+CATEST21,Agg2,B,seconds_rattling,91,M,831,359.6
+CATEST23,Agg2,A,seconds_rattling,99,F,745,197.8
+CATEST17,Agg2,B,seconds_rattling,110,F,775,258.2
+CATEST9,Agg2,A,seconds_rattling,180,M,800,384.1
+CATEST13,Agg2,A,seconds_rattling,186,M,696,287
+CATEST2,Agg2,B,seconds_rattling,208,F,782,232
+CATEST19,Agg2,A,seconds_rattling,211,M,769,215.7
+CATEST6,Agg2,B,seconds_rattling,276,M,971,771
+CATEST19,Agg2,B,seconds_rattling,300,M,769,215.7
+CATEST8,Bold ,A,seconds_headOUT,11,M,920,454
+CATEST15,Bold ,B,seconds_headOUT,94,M,933,454.3
+CATEST15,Bold ,B,seconds_bodyOUT,229,M,933,454.3
+CATEST15,Bold ,A,seconds_headOUT,429,M,933,454.3
+CATEST17,Bold ,A,seconds_headOUT,700,F,775,258.2
+CATEST21,Bold ,B,seconds_headOUT,822,M,831,359.6
+CATEST21,Bold ,A,seconds_headOUT,837,M,831,359.6
+CATEST12,Bold ,B,seconds_headOUT,880,M,792,283
+CATEST14,Bold ,B,seconds_headOUT,885,M,679,159
+CATEST13,Bold ,B,seconds_headOUT,917,M,696,287
+CATEST10,Bold ,A,seconds_headOUT,945,M,1002,772
+CATEST21,Bold ,B,seconds_bodyOUT,972,M,831,359.6
+CATEST10,Bold ,A,seconds_bodyOUT,1034,M,1002,772
+CATEST15,Bold ,A,seconds_bodyOUT,1047,M,933,454.3
+CATEST20,Bold ,A,seconds_headOUT,1076,M,687,193.6
+CATEST14,Bold ,A,seconds_headOUT,1115,M,679,159
+CATEST17,Bold ,A,seconds_bodyOUT,1123,F,775,258.2
+CATEST3,Bold ,B,seconds_headOUT,1136,M,840,382
+CATEST3,Bold ,A,seconds_headOUT,1139,M,840,382
+CATEST14,Bold ,A,seconds_bodyOUT,1168,M,679,159
+CATEST5,Bold ,A,seconds_headOUT,1169,F,82.2,335
+CATEST20,Bold ,A,seconds_bodyOUT,1173,M,687,193.6
+CATEST14,Bold ,B,seconds_bodyOUT,1221,M,679,159
+CATEST20,Bold ,B,seconds_headOUT,1235,M,687,193.6
+CATEST19,Bold ,B,seconds_headOUT,1253,M,769,215.7
+CATEST20,Bold ,B,seconds_bodyOUT,1293,M,687,193.6
+CATEST4,Bold ,B,seconds_headOUT,1337,M,890,441
+CATEST3,Bold ,A,seconds_bodyOUT,1511,M,840,382
+CATEST19,Bold ,A,seconds_headOUT,1532,M,769,215.7
+CATEST11,Bold ,A,seconds_headOUT,1584,F,830,325
+CATEST16,Bold ,B,seconds_headOUT,1637,M,699,232
+CATEST2,Bold ,B,seconds_headOUT,1648,F,782,232
+CATEST24,Bold ,A,seconds_headOUT,1652,F,741,276.4
+CATEST18,Bold ,A,seconds_headOUT,1674,F,684,156.8
+CATEST4,Bold ,A,seconds_headOUT,1704,M,890,441
+CATEST18,Bold ,A,seconds_bodyOUT,1756,F,684,156.8
+CATEST22,Bold ,B,seconds_headOUT,1834,M,702,150.6
+CATEST10,Bold ,B,seconds_headOUT,1900,M,1002,772
+CATEST12,Bold ,A,seconds_headOUT,2041,M,792,283
+CATEST19,Bold ,A,seconds_bodyOUT,2071,M,769,215.7
+CATEST16,Bold ,A,seconds_headOUT,2072,M,699,232
+CATEST22,Bold ,A,seconds_headOUT,2153,M,702,150.6
+CATEST10,Bold ,B,seconds_bodyOUT,2340,M,1002,772
+CATEST13,Bold ,A,seconds_headOUT,2384,M,696,287
+CATEST16,Bold ,A,seconds_bodyOUT,2386,M,699,232
+CATEST3,Bold ,B,seconds_bodyOUT,2426,M,840,382
+CATEST13,Bold ,A,seconds_bodyOUT,2544,M,696,287
+CATEST11,Bold ,B,seconds_headOUT,2676,F,830,325
+CATEST18,Bold ,B,seconds_headOUT,2710,F,684,156.8
+CATEST21,Bold ,A,seconds_bodyOUT,2724,M,831,359.6
+CATEST22,Bold ,B,seconds_bodyOUT,2726,M,702,150.6
+CATEST12,Bold ,A,seconds_bodyOUT,2753,M,792,283
+CATEST22,Bold ,A,seconds_bodyOUT,2846,M,702,150.6
+CATEST19,Bold ,B,seconds_bodyOUT,2853,M,769,215.7
+CATEST24,Bold ,A,seconds_bodyOUT,3028,F,741,276.4
+CATEST7,Bold ,A,seconds_headOUT,3041,M,908,406
+CATEST11,Bold ,A,seconds_bodyOUT,3103,F,830,325
+CATEST4,Bold ,A,seconds_bodyOUT,3205,M,890,441
+CATEST24,Bold ,B,seconds_headOUT,3221,F,741,276.4
+CATEST11,Bold ,B,seconds_bodyOUT,3225,F,830,325
+CATEST18,Bold ,B,seconds_bodyOUT,3267,F,684,156.8
+CATEST24,Bold ,B,seconds_bodyOUT,3326,F,741,276.4
+CATEST5,Bold ,B,seconds_headOUT,3661,F,82.2,335
+CATEST7,Bold ,B,seconds_headOUT,3714,M,908,406
+CATEST2,Bold ,A,seconds_headOUT,3719,F,782,232
+CATEST2,Bold ,B,seconds_bodyOUT,3728,F,782,232
+CATEST5,Bold ,A,seconds_bodyOUT,3902,F,82.2,335
+CATEST4,Bold ,B,seconds_bodyOUT,3953,M,890,441
+CATEST12,Bold ,B,seconds_bodyOUT,4145,M,792,283
+CATEST13,Bold ,B,seconds_bodyOUT,4272,M,696,287
+CATEST8,Bold ,B,seconds_headOUT,4273,M,920,454
+CATEST16,Bold ,B,seconds_bodyOUT,4436,M,699,232
+CATEST9,Bold ,B,seconds_headOUT,4686,M,800,384.1
+CATEST6,Bold ,A,seconds_headOUT,4799,M,971,771
+CATEST17,Bold ,B,seconds_headOUT,4845,F,775,258.2
+CATEST5,Bold ,B,seconds_bodyOUT,4946,F,82.2,335
+CATEST9,Bold ,B,seconds_bodyOUT,5096,M,800,384.1
+CATEST17,Bold ,B,seconds_bodyOUT,5682,F,775,258.2
+CATEST8,Bold ,A,seconds_bodyOUT,6214,M,920,454
+CATEST8,Bold ,B,seconds_bodyOUT,6880,M,920,454
+CATEST2,Bold ,A,seconds_bodyOUT,7200,F,782,232
+CATEST6,Bold ,A,seconds_bodyOUT,7200,M,971,771
+CATEST6,Bold ,B,seconds_headOUT,7200,M,971,771
+CATEST6,Bold ,B,seconds_bodyOUT,7200,M,971,771
+CATEST7,Bold ,A,seconds_bodyOUT,7200,M,908,406
+CATEST7,Bold ,B,seconds_bodyOUT,7200,M,908,406
+CATEST9,Bold ,A,seconds_headOUT,7200,M,800,384.1
+CATEST9,Bold ,A,seconds_bodyOUT,7200,M,800,384.1
+CATEST23,Bold ,A,seconds_headOUT,7200,F,745,197.8
+CATEST23,Bold ,A,seconds_bodyOUT,7200,F,745,197.8
+CATEST23,Bold ,B,seconds_headOUT,7200,F,745,197.8
+CATEST23,Bold ,B,seconds_bodyOUT,7200,F,745,197.8
+CATEST9,Explo1,A,seconds_LatencyMovement,26,M,800,384.1
+CATEST9,Explo1,A,seconds_arena,31,M,800,384.1
+CATEST3,Explo1,A,seconds_LatencyMovement,78,M,840,382
+CATEST3,Explo1,A,seconds_arena,86,M,840,382
+CATEST14,Explo1,B,seconds_LatencyMovement,112,M,679,159
+CATEST14,Explo1,A,seconds_LatencyMovement,135,M,679,159
+CATEST15,Explo1,A,seconds_LatencyMovement,216,M,933,454.3
+CATEST14,Explo1,B,seconds_arena,225,M,679,159
+CATEST14,Explo1,A,seconds_arena,257,M,679,159
+CATEST10,Explo1,A,seconds_LatencyMovement,336,M,1002,772
+CATEST16,Explo1,A,seconds_LatencyMovement,433,M,699,232
+CATEST15,Explo1,A,seconds_arena,453,M,933,454.3
+CATEST10,Explo1,A,seconds_arena,515,M,1002,772
+CATEST16,Explo1,A,seconds_arena,547,M,699,232
+CATEST3,Explo1,B,seconds_LatencyMovement,613,M,840,382
+CATEST3,Explo1,B,seconds_arena,634,M,840,382
+CATEST15,Explo1,B,seconds_LatencyMovement,674,M,933,454.3
+CATEST19,Explo1,B,seconds_LatencyMovement,707,M,769,215.7
+CATEST13,Explo1,A,seconds_LatencyMovement,754,M,696,287
+CATEST10,Explo1,B,seconds_LatencyMovement,757,M,1002,772
+CATEST15,Explo1,B,seconds_arena,770,M,933,454.3
+CATEST19,Explo1,B,seconds_arena,797,M,769,215.7
+CATEST5,Explo1,A,seconds_LatencyMovement,805,F,82.2,335
+CATEST2,Explo1,B,seconds_LatencyMovement,806,F,782,232
+CATEST5,Explo1,A,seconds_arena,808,F,82.2,335
+CATEST2,Explo1,B,seconds_arena,816,F,782,232
+CATEST13,Explo1,A,seconds_arena,820,M,696,287
+CATEST21,Explo1,B,seconds_LatencyMovement,822,M,831,359.6
+CATEST10,Explo1,B,seconds_arena,864,M,1002,772
+CATEST21,Explo1,B,seconds_arena,882,M,831,359.6
+CATEST17,Explo1,A,seconds_LatencyMovement,894,F,775,258.2
+CATEST17,Explo1,A,seconds_arena,975,F,775,258.2
+CATEST4,Explo1,A,seconds_LatencyMovement,1019,M,890,441
+CATEST4,Explo1,A,seconds_arena,1033,M,890,441
+CATEST11,Explo1,B,seconds_LatencyMovement,1067,F,830,325
+CATEST5,Explo1,B,seconds_LatencyMovement,1194,F,82.2,335
+CATEST5,Explo1,B,seconds_arena,1197,F,82.2,335
+CATEST11,Explo1,B,seconds_arena,1205,F,830,325
+CATEST16,Explo1,B,seconds_LatencyMovement,1254,M,699,232
+CATEST12,Explo1,A,seconds_LatencyMovement,1341,M,792,283
+CATEST2,Explo1,A,seconds_LatencyMovement,1351,F,782,232
+CATEST2,Explo1,A,seconds_arena,1370,F,782,232
+CATEST20,Explo1,B,seconds_LatencyMovement,1398,M,687,193.6
+CATEST18,Explo1,A,seconds_LatencyMovement,1414,F,684,156.8
+CATEST20,Explo1,A,seconds_LatencyMovement,1447,M,687,193.6
+CATEST12,Explo1,A,seconds_arena,1463,M,792,283
+CATEST20,Explo1,B,seconds_arena,1481,M,687,193.6
+CATEST18,Explo1,A,seconds_arena,1551,F,684,156.8
+CATEST13,Explo1,B,seconds_LatencyMovement,1552,M,696,287
+CATEST20,Explo1,A,seconds_arena,1576,M,687,193.6
+CATEST16,Explo1,B,seconds_arena,1595,M,699,232
+CATEST4,Explo1,B,seconds_LatencyMovement,1598,M,890,441
+CATEST4,Explo1,B,seconds_arena,1608,M,890,441
+CATEST13,Explo1,B,seconds_arena,1613,M,696,287
+CATEST12,Explo1,B,seconds_LatencyMovement,1624,M,792,283
+CATEST11,Explo1,A,seconds_LatencyMovement,1691,F,830,325
+CATEST12,Explo1,B,seconds_arena,1770,M,792,283
+CATEST19,Explo1,A,seconds_LatencyMovement,1871,M,769,215.7
+CATEST19,Explo1,A,seconds_arena,1940,M,769,215.7
+CATEST24,Explo1,B,seconds_LatencyMovement,1949,F,741,276.4
+CATEST18,Explo1,B,seconds_LatencyMovement,1978,F,684,156.8
+CATEST11,Explo1,A,seconds_arena,2004,F,830,325
+CATEST18,Explo1,B,seconds_arena,2061,F,684,156.8
+CATEST22,Explo1,B,seconds_LatencyMovement,2115,M,702,150.6
+CATEST24,Explo1,B,seconds_arena,2179,F,741,276.4
+CATEST22,Explo1,B,seconds_arena,2221,M,702,150.6
+CATEST8,Explo1,A,seconds_LatencyMovement,2357,M,920,454
+CATEST17,Explo1,B,seconds_LatencyMovement,2375,F,775,258.2
+CATEST17,Explo1,B,seconds_arena,2478,F,775,258.2
+CATEST22,Explo1,A,seconds_LatencyMovement,2511,M,702,150.6
+CATEST9,Explo1,B,seconds_LatencyMovement,2564,M,800,384.1
+CATEST22,Explo1,A,seconds_arena,2629,M,702,150.6
+CATEST7,Explo1,A,seconds_LatencyMovement,2978,M,908,406
+CATEST7,Explo1,A,seconds_arena,3322,M,908,406
+CATEST9,Explo1,B,seconds_arena,3341,M,800,384.1
+CATEST6,Explo1,A,seconds_LatencyMovement,3600,M,971,771
+CATEST6,Explo1,A,seconds_arena,3600,M,971,771
+CATEST6,Explo1,B,seconds_LatencyMovement,3600,M,971,771
+CATEST6,Explo1,B,seconds_arena,3600,M,971,771
+CATEST7,Explo1,B,seconds_LatencyMovement,3600,M,908,406
+CATEST7,Explo1,B,seconds_arena,3600,M,908,406
+CATEST8,Explo1,A,seconds_arena,3600,M,920,454
+CATEST8,Explo1,B,seconds_LatencyMovement,3600,M,920,454
+CATEST8,Explo1,B,seconds_arena,3600,M,920,454
+CATEST21,Explo1,A,seconds_LatencyMovement,3600,M,831,359.6
+CATEST21,Explo1,A,seconds_arena,3600,M,831,359.6
+CATEST23,Explo1,A,seconds_LatencyMovement,3600,F,745,197.8
+CATEST23,Explo1,A,seconds_arena,3600,F,745,197.8
+CATEST23,Explo1,B,seconds_LatencyMovement,3600,F,745,197.8
+CATEST23,Explo1,B,seconds_arena,3600,F,745,197.8
+CATEST24,Explo1,A,seconds_LatencyMovement,3600,F,741,276.4
+CATEST24,Explo1,A,seconds_arena,3600,F,741,276.4
+CATEST7,Explo2,A,squares,0,M,908,406
+CATEST8,Explo2,B,squares,0,M,920,454
+CATEST23,Explo2,A,squares,0,F,745,197.8
+CATEST23,Explo2,B,squares,0,F,745,197.8
+CATEST8,Explo2,A,squares,6,M,920,454
+CATEST7,Explo2,B,squares,20,M,908,406
+CATEST18,Explo2,A,squares,45,F,684,156.8
+CATEST6,Explo2,B,squares,50,M,971,771
+CATEST23,Explo2,B,tong_flicks,51,F,745,197.8
+CATEST24,Explo2,B,squares,62,F,741,276.4
+CATEST6,Explo2,A,squares,67,M,971,771
+CATEST18,Explo2,B,squares,67,F,684,156.8
+CATEST23,Explo2,A,tong_flicks,67,F,745,197.8
+CATEST22,Explo2,A,squares,71,M,702,150.6
+CATEST15,Explo2,A,tong_flicks,75,M,933,454.3
+CATEST22,Explo2,B,squares,79,M,702,150.6
+CATEST12,Explo2,A,squares,85,M,792,283
+CATEST24,Explo2,A,squares,85,F,741,276.4
+CATEST9,Explo2,B,squares,87,M,800,384.1
+CATEST17,Explo2,A,squares,100,F,775,258.2
+CATEST19,Explo2,B,squares,101,M,769,215.7
+CATEST19,Explo2,A,squares,111,M,769,215.7
+CATEST21,Explo2,A,squares,114,M,831,359.6
+CATEST2,Explo2,A,squares,115,F,782,232
+CATEST2,Explo2,B,squares,116,F,782,232
+CATEST17,Explo2,B,squares,117,F,775,258.2
+CATEST20,Explo2,A,squares,127,M,687,193.6
+CATEST9,Explo2,A,squares,134,M,800,384.1
+CATEST7,Explo2,A,tong_flicks,143,M,908,406
+CATEST12,Explo2,B,squares,143,M,792,283
+CATEST13,Explo2,A,squares,144,M,696,287
+CATEST5,Explo2,B,squares,151,F,82.2,335
+CATEST4,Explo2,B,squares,152,M,890,441
+CATEST3,Explo2,A,squares,154,M,840,382
+CATEST20,Explo2,B,squares,159,M,687,193.6
+CATEST13,Explo2,B,squares,161,M,696,287
+CATEST5,Explo2,A,squares,173,F,82.2,335
+CATEST11,Explo2,A,squares,180,F,830,325
+CATEST15,Explo2,B,squares,185,M,933,454.3
+CATEST14,Explo2,B,squares,188,M,679,159
+CATEST3,Explo2,B,squares,190,M,840,382
+CATEST14,Explo2,A,squares,192,M,679,159
+CATEST21,Explo2,B,squares,199,M,831,359.6
+CATEST16,Explo2,B,squares,203,M,699,232
+CATEST4,Explo2,A,squares,219,M,890,441
+CATEST8,Explo2,B,tong_flicks,240,M,920,454
+CATEST15,Explo2,A,squares,256,M,933,454.3
+CATEST16,Explo2,A,squares,293,M,699,232
+CATEST11,Explo2,B,squares,299,F,830,325
+CATEST10,Explo2,B,squares,351,M,1002,772
+CATEST10,Explo2,A,squares,361,M,1002,772
+CATEST7,Explo2,B,tong_flicks,390,M,908,406
+CATEST8,Explo2,A,tong_flicks,447,M,920,454
+CATEST22,Explo2,A,tong_flicks,683,M,702,150.6
+CATEST6,Explo2,B,tong_flicks,694,M,971,771
+CATEST22,Explo2,B,tong_flicks,741,M,702,150.6
+CATEST12,Explo2,A,tong_flicks,806,M,792,283
+CATEST6,Explo2,A,tong_flicks,952,M,971,771
+CATEST2,Explo2,A,tong_flicks,1046,F,782,232
+CATEST24,Explo2,B,tong_flicks,1062,F,741,276.4
+CATEST18,Explo2,A,tong_flicks,1131,F,684,156.8
+CATEST12,Explo2,B,tong_flicks,1135,M,792,283
+CATEST21,Explo2,A,tong_flicks,1170,M,831,359.6
+CATEST24,Explo2,A,tong_flicks,1173,F,741,276.4
+CATEST2,Explo2,B,tong_flicks,1183,F,782,232
+CATEST5,Explo2,B,tong_flicks,1195,F,82.2,335
+CATEST9,Explo2,B,tong_flicks,1226,M,800,384.1
+CATEST18,Explo2,B,tong_flicks,1234,F,684,156.8
+CATEST20,Explo2,B,tong_flicks,1320,M,687,193.6
+CATEST19,Explo2,B,tong_flicks,1333,M,769,215.7
+CATEST16,Explo2,B,tong_flicks,1401,M,699,232
+CATEST17,Explo2,B,tong_flicks,1453,F,775,258.2
+CATEST20,Explo2,A,tong_flicks,1457,M,687,193.6
+CATEST4,Explo2,B,tong_flicks,1463,M,890,441
+CATEST11,Explo2,A,tong_flicks,1486,F,830,325
+CATEST3,Explo2,A,tong_flicks,1541,M,840,382
+CATEST17,Explo2,A,tong_flicks,1588,F,775,258.2
+CATEST15,Explo2,B,tong_flicks,1611,M,933,454.3
+CATEST19,Explo2,A,tong_flicks,1628,M,769,215.7
+CATEST3,Explo2,B,tong_flicks,1654,M,840,382
+CATEST13,Explo2,B,tong_flicks,1708,M,696,287
+CATEST16,Explo2,A,tong_flicks,1797,M,699,232
+CATEST13,Explo2,A,tong_flicks,1817,M,696,287
+CATEST5,Explo2,A,tong_flicks,1821,F,82.2,335
+CATEST4,Explo2,A,tong_flicks,1833,M,890,441
+CATEST9,Explo2,A,tong_flicks,1888,M,800,384.1
+CATEST10,Explo2,B,tong_flicks,1915,M,1002,772
+CATEST21,Explo2,B,tong_flicks,1943,M,831,359.6
+CATEST10,Explo2,A,tong_flicks,1953,M,1002,772
+CATEST11,Explo2,B,tong_flicks,2001,F,830,325
+CATEST14,Explo2,A,tong_flicks,2032,M,679,159
+CATEST14,Explo2,B,tong_flicks,2196,M,679,159
+CATEST2,Soc1,A,score_behavior,-1,F,782,232
+CATEST4,Soc1,A,score_behavior,-1,M,890,441
+CATEST4,Soc1,B,score_behavior,-1,M,890,441
+CATEST5,Soc1,A,score_behavior,-1,F,82.2,335
+CATEST10,Soc1,B,score_behavior,-1,M,1002,772
+CATEST11,Soc1,A,score_behavior,-1,F,830,325
+CATEST11,Soc1,B,score_behavior,-1,F,830,325
+CATEST12,Soc1,A,score_behavior,-1,M,792,283
+CATEST13,Soc1,A,score_behavior,-1,M,696,287
+CATEST15,Soc1,B,score_behavior,-1,M,933,454.3
+CATEST17,Soc1,A,score_behavior,-1,F,775,258.2
+CATEST18,Soc1,A,score_behavior,-1,F,684,156.8
+CATEST23,Soc1,A,score_behavior,-1,F,745,197.8
+CATEST23,Soc1,B,score_behavior,-1,F,745,197.8
+CATEST24,Soc1,A,score_behavior,-1,F,741,276.4
+CATEST5,Soc1,B,score_behavior,0,F,82.2,335
+CATEST6,Soc1,A,score_behavior,0,M,971,771
+CATEST6,Soc1,B,score_behavior,0,M,971,771
+CATEST7,Soc1,A,score_behavior,0,M,908,406
+CATEST8,Soc1,A,score_behavior,0,M,920,454
+CATEST8,Soc1,B,score_behavior,0,M,920,454
+CATEST9,Soc1,A,score_behavior,0,M,800,384.1
+CATEST14,Soc1,A,score_behavior,0,M,679,159
+CATEST18,Soc1,B,score_behavior,0,F,684,156.8
+CATEST19,Soc1,B,score_behavior,0,M,769,215.7
+CATEST20,Soc1,B,score_behavior,0,M,687,193.6
+CATEST21,Soc1,A,score_behavior,0,M,831,359.6
+CATEST22,Soc1,A,score_behavior,0,M,702,150.6
+CATEST2,Soc1,B,score_behavior,1,F,782,232
+CATEST3,Soc1,A,score_behavior,1,M,840,382
+CATEST3,Soc1,B,score_behavior,1,M,840,382
+CATEST7,Soc1,B,score_behavior,1,M,908,406
+CATEST9,Soc1,B,score_behavior,1,M,800,384.1
+CATEST10,Soc1,A,score_behavior,1,M,1002,772
+CATEST12,Soc1,B,score_behavior,1,M,792,283
+CATEST13,Soc1,B,score_behavior,1,M,696,287
+CATEST14,Soc1,B,score_behavior,1,M,679,159
+CATEST15,Soc1,A,score_behavior,1,M,933,454.3
+CATEST16,Soc1,A,score_behavior,1,M,699,232
+CATEST16,Soc1,B,score_behavior,1,M,699,232
+CATEST17,Soc1,B,score_behavior,1,F,775,258.2
+CATEST19,Soc1,A,score_behavior,1,M,769,215.7
+CATEST20,Soc1,A,score_behavior,1,M,687,193.6
+CATEST21,Soc1,B,score_behavior,1,M,831,359.6
+CATEST22,Soc1,B,score_behavior,1,M,702,150.6
+CATEST24,Soc1,B,score_behavior,1,F,741,276.4
+CATEST3,Soc2,A,centimeters,1,M,840,382
+CATEST3,Soc2,B,centimeters,1,M,840,382
+CATEST4,Soc2,A,centimeters,1,M,890,441
+CATEST4,Soc2,B,centimeters,1,M,890,441
+CATEST5,Soc2,A,centimeters,1,F,82.2,335
+CATEST9,Soc2,A,centimeters,1,M,800,384.1
+CATEST9,Soc2,B,centimeters,1,M,800,384.1
+CATEST10,Soc2,A,centimeters,1,M,1002,772
+CATEST10,Soc2,B,centimeters,1,M,1002,772
+CATEST11,Soc2,A,centimeters,1,F,830,325
+CATEST12,Soc2,A,centimeters,1,M,792,283
+CATEST12,Soc2,B,centimeters,1,M,792,283
+CATEST13,Soc2,A,centimeters,1,M,696,287
+CATEST13,Soc2,B,centimeters,1,M,696,287
+CATEST14,Soc2,A,centimeters,1,M,679,159
+CATEST14,Soc2,B,centimeters,1,M,679,159
+CATEST15,Soc2,A,centimeters,1,M,933,454.3
+CATEST15,Soc2,B,centimeters,1,M,933,454.3
+CATEST16,Soc2,A,centimeters,1,M,699,232
+CATEST16,Soc2,B,centimeters,1,M,699,232
+CATEST17,Soc2,A,centimeters,1,F,775,258.2
+CATEST17,Soc2,B,centimeters,1,F,775,258.2
+CATEST18,Soc2,A,centimeters,1,F,684,156.8
+CATEST18,Soc2,B,centimeters,1,F,684,156.8
+CATEST19,Soc2,A,centimeters,1,M,769,215.7
+CATEST19,Soc2,B,centimeters,1,M,769,215.7
+CATEST20,Soc2,A,centimeters,1,M,687,193.6
+CATEST20,Soc2,B,centimeters,1,M,687,193.6
+CATEST21,Soc2,A,centimeters,1,M,831,359.6
+CATEST21,Soc2,B,centimeters,1,M,831,359.6
+CATEST22,Soc2,A,centimeters,1,M,702,150.6
+CATEST22,Soc2,B,centimeters,1,M,702,150.6
+CATEST23,Soc2,A,centimeters,1,F,745,197.8
+CATEST24,Soc2,A,centimeters,1,F,741,276.4
+CATEST24,Soc2,B,centimeters,1,F,741,276.4
+CATEST23,Soc2,B,centimeters,1,F,745,197.8
+CATEST2,Soc2,A,centimeters,0,F,782,232
+CATEST11,Soc2,B,centimeters,0,F,830,325
+CATEST8,Soc2,A,centimeters,0,M,920,454
+CATEST2,Soc2,B,centimeters,0,F,782,232
+CATEST6,Soc2,A,centimeters,0,M,971,771
+CATEST6,Soc2,B,centimeters,0,M,971,771
+CATEST7,Soc2,A,centimeters,0,M,908,406
+CATEST7,Soc2,B,centimeters,0,M,908,406
+CATEST8,Soc2,B,centimeters,0,M,920,454
+CATEST5,Soc2,B,centimeters,0,F,82.2,335

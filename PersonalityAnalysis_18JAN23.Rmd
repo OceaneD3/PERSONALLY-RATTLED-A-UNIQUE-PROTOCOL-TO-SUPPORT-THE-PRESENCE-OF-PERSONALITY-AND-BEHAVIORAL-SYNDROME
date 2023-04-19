@@ -1,0 +1,567 @@
+---
+title: "PersonalityAnalysis_18JAN23"
+author: "Oceane Da Cunha"
+date: "2023-01-18"
+output: html_document
+---
+
+```{r}
+#Loading packages
+library(ggplot2)
+library(rptR)
+library(tidyr)
+library(fitdistrplus)
+library(reshape2)
+library(Hmisc)
+library(stats)
+library(cluster)
+library(lme4)
+library(stargazer)
+library(lmerTest)
+library(corrplot)
+library(factoextra)
+library(wesanderson)
+library(ggsci)
+require(scales)
+library(dfoptim)
+library(optimx)
+library(cluster.datasets)
+library(clValid) 
+library(NbClust)
+library(knitr)
+library(kableExtra)
+library(gpboost)
+```
+
+```{r}
+#Loading the data
+PersoT <- read.csv("PersonalityResults_CATEST_16JAN23.csv")
+```
+
+```{r}
+#Testing repetability using Kendall's coefficient of concordance (W)
+#Activity trials
+Act <- subset(PersoT, PersoT$Trial == "Act")
+Actsub <- subset(Act, select = -c(Trial, Result_type))
+Actw <- spread(Actsub,Repetition,Result)
+cor.test(Actw$A, Actw$B, method="kendall", exact=FALSE)
+
+#Aggression 1
+Agg1 <- subset(PersoT, PersoT$Trial == "Agg1")
+Agg1sub <- subset(Agg1, select = -c(Trial, Result_type))
+Agg1w <- spread(Agg1sub,Repetition,Result)
+cor.test(Agg1w$A, Agg1w$B, method="kendall", exact=FALSE)
+
+#Aggression 2
+Agg2 <- subset(PersoT, PersoT$Trial == "Agg2")
+Agg2sub <- subset(Agg2, select = -c(Trial, Result_type))
+Agg2w <- spread(Agg2sub,Repetition,Result)
+cor.test(Agg2w$A, Agg2w$B, method="kendall", exact=FALSE)
+
+#Bold_ head out
+BoldH <- subset(PersoT, PersoT$Trial == "Bold ")
+BoldH1 <- subset(BoldH, BoldH$Result_type == "seconds_headOUT")
+BoldH1sub <- subset(BoldH1 , select = -c(Trial, Result_type))
+BoldH1w <- spread(BoldH1sub,Repetition,Result)
+cor.test(BoldH1w$A, BoldH1w$B, method="kendall", exact=FALSE)
+
+#Bold_ body out
+BoldH2 <- subset(BoldH, BoldH$Result_type == "seconds_bodyOUT")
+BoldH2sub <- subset(BoldH2 , select = -c(Trial, Result_type))
+BoldH2w <- spread(BoldH2sub,Repetition,Result)
+cor.test(BoldH2w$A, BoldH2w$B, method="kendall", exact=FALSE)
+
+#Exploration 1_ Latency movement
+Explo1LM <- subset(PersoT, PersoT$Trial == "Explo1")
+Explo1LM1 <- subset(Explo1LM, Explo1LM$Result_type == "seconds_LatencyMovement")
+Explo1LM1sub <- subset(Explo1LM1 , select = -c(Trial, Result_type))
+Explo1LM1w <- spread(Explo1LM1sub,Repetition,Result)
+cor.test(Explo1LM1w$A,Explo1LM1w$B, method="kendall", exact=FALSE)
+
+#Exploration 1_ Leaving arena
+Explo1LM2 <- subset(Explo1LM, Explo1LM$Result_type == "seconds_arena")
+Explo1LM2sub <- subset(Explo1LM2 , select = -c(Trial, Result_type))
+Explo1LM2w <- spread(Explo1LM2sub,Repetition,Result)
+cor.test(Explo1LM2w$A,Explo1LM2w$B, method="kendall", exact=FALSE)
+
+#Exploration 2_ Squares
+Explo2 <- subset(PersoT, PersoT$Trial == "Explo2")
+Explo2S <- subset(Explo2, Explo2$Result_type == "squares")
+Explo2Ssub <- subset(Explo2S , select = -c(Trial, Result_type))
+Explo2Sw <- spread(Explo2Ssub,Repetition,Result)
+cor.test(Explo2Sw$A,Explo2Sw$B, method="kendall", exact=FALSE)
+
+#Exploration 2_ tongue flicks
+Explo2T <- subset(Explo2, Explo2$Result_type == "tong_flicks")
+Explo2Tsub <- subset(Explo2T , select = -c(Trial, Result_type))
+Explo2Tw <- spread(Explo2Tsub,Repetition,Result)
+cor.test(Explo2Tw$A,Explo2Tw$B, method="kendall", exact=FALSE)
+
+#Sociality 1
+Soc1 <- subset(PersoT, PersoT$Trial == "Soc1")
+Soc1sub <- subset(Soc1 , select = -c(Trial, Result_type))
+Soc1w <- spread(Soc1sub,Repetition,Result)
+cor.test(Soc1w$A,Soc1w$B, method="kendall", exact=FALSE)
+
+#Sociality 2
+Soc2 <- subset(PersoT, PersoT$Trial == "Soc2")
+Soc2sub <- subset(Soc2 , select = -c(Trial, Result_type))
+Soc2w <- spread(Soc2sub,Repetition,Result)
+cor.test(Soc2w$A,Soc2w$B, method="kendall", exact=FALSE)
+```
+
+```{r}
+#Using the rptR package
+
+#For activity
+#Checking the distribution = Gaussian
+ggplot(Act, aes(x=Act$Result)) + geom_density()
+mean(Act$Result)
+var(Act)
+#Doing the model
+Act_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Act, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(Act_rpt)
+
+#Calculating the residuals to see if normal distribution
+ActN <- lmer(Result ~ Repetition + (1 | Individual),data = Act)
+shapiro.test(residuals(ActN))
+#Activity follow a gaussian (normal) distribution
+
+#Plotting the results
+plot(Act_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#Using the rptR package
+#For Aggression 1
+#Checking the distribution = Gaussian
+ggplot(Agg1, aes(x=Agg1$Result)) + geom_density()
+mean(Agg1$Result)
+var(Agg1$Result)
+
+#Changing the data to a bimodal distribution 
+write.csv(Agg1,"C:/Users/ocean/Desktop/El Paso PhD/C_atrox_PROJECT/Experiment/Behavioral trials/PersonalityAnalysis_JAN23\\Agg1B.csv", row.names=FALSE)
+
+Agg1B <- read.csv('Agg1B.csv')
+ggplot(Agg1B, aes(x=Agg1B$ResultB)) + geom_density()
+
+#Doing the model with a bimodal distribution
+Agg1B_rpt <- rpt(ResultB ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Agg1B, datatype = "Binary", nboot = 1000, 
+    npermut = 0)
+print(Agg1B_rpt)
+
+Agg1B_rptB <- rptBinary(Result ~ Repetition + (1 | Individual), grname = c("Individual"), 
+    data = Agg1B, nboot = 1000, 
+    npermut = 0)
+print(Agg1B_rptB)
+
+#Plotting the results
+plot(Agg1_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+```{r}
+#For Aggression 2
+#Checking the distribution
+ggplot(Agg2, aes(x=Agg2$Result)) + geom_density()
+
+Agg2N <- lmer(Result ~ Repetition + (1 | Individual),data = Agg2)
+shapiro.test(residuals(Agg2N))
+#Not normal, need to log transform
+Agg2$log =log(Agg2$Result)
+ggplot(Agg2, aes(x=Agg2$log)) + geom_density()
+
+Agg2N3 <- lmer(log ~ Repetition + (1 | Individual),data = Agg2)
+shapiro.test(residuals(Agg2N3))
+#Now follow a normal distribution
+
+#Doing the model
+Agg2_rpt <- rpt(log ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Agg2, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(Agg2_rpt)
+#Plotting the results
+plot(Agg2_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For boldness_head out
+
+#Checking the distribution
+ggplot(BoldH1, aes(x=BoldH1$Result)) + geom_density()
+
+BoldH1L <- lmer(Result ~ Repetition + (1 | Individual),data = BoldH1)
+shapiro.test(residuals(BoldH1L))
+#Follow a normal distribution, no need to transform the data
+
+#Doing the model
+BoldH1_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = BoldH1, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(BoldH1_rpt)
+
+#Plotting the results
+plot(BoldH1_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For boldness_head out
+
+#Checking the distribution = Gaussian
+
+ggplot(BoldH2, aes(x=BoldH2$Result)) + geom_density()
+
+BoldH2L <- lmer(Result ~ Repetition + (1 | Individual),data = BoldH2)
+shapiro.test(residuals(BoldH2L))
+
+#Doing the model
+BoldH2_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = BoldH2, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(BoldH2_rpt)
+#Plotting the results
+plot(BoldH2_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For Exploration 1_ Latency to move
+
+#Checking the distribution
+ggplot(Explo1LM1, aes(x=Explo1LM1$Result)) + geom_density()
+
+Explo1LM1L <- lmer(Result ~ Repetition + (1 | Individual),data = Explo1LM1)
+shapiro.test(residuals(Explo1LM1L))
+
+#Doing the model
+Explo1LM1_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Explo1LM1, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(Explo1LM1_rpt)
+
+#Plotting the results
+plot(Explo1LM1_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For Exploration 1_ arena
+#Checking the distribution
+ggplot(Explo1LM2, aes(x=Explo1LM1$Result)) + geom_density()
+
+Explo1LM2L <- lmer(Result ~ Repetition + (1 | Individual),data = Explo1LM2)
+shapiro.test(residuals(Explo1LM2L))
+#Follow Gaussian distribution
+
+#Doing the model
+Explo1LM2_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Explo1LM2, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(Explo1LM2_rpt)
+
+#Plotting the results
+plot(Explo1LM2_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For Exploration 2_ squares
+
+#Checking the distribution = Gaussian
+ggplot(Explo2S, aes(x=Explo2S$Result)) + geom_density()
+
+Explo2SL <- lmer(Result ~ Repetition + (1 | Individual),data = Explo2S)
+shapiro.test(residuals(Explo2SL))
+
+
+#Doing the model
+Explo2S_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Explo2S, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(Explo2S_rpt)
+#Plotting the results
+plot(Explo2S_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For Exploration 2_ tongue flicks
+
+#Checking the distribution
+ggplot(Explo2T, aes(x=Explo2T$Result)) + geom_density()
+
+Explo2TL <- lmer(Result ~ Repetition + (1 | Individual),data = Explo2T)
+shapiro.test(residuals(Explo2TL))
+
+#Doing the model
+Explo2T_rpt <- rpt(Result ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Explo2T, datatype = "Gaussian", nboot = 1000, 
+    npermut = 0)
+print(Explo2T_rpt)
+
+#Plotting the results
+plot(Explo2T_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For Sociality 1
+#Checking the distribution = Gaussian
+ggplot(Soc1, aes(x=Soc1$Result)) + geom_density()
+
+write.csv(Soc1,"C:/Users/ocean/Desktop/El Paso PhD/C_atrox_PROJECT/Experiment/Behavioral trials/PersonalityAnalysis_JAN23\\Soc1.csv", row.names=FALSE)
+
+Soc1B <- read.csv("Soc1.csv")
+
+#Doing the model
+Soc1_rpt <- rpt(ResultB ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Soc1B, datatype = "Poisson", nboot = 1000, 
+    npermut = 0)
+print(Soc1_rpt)
+#Plotting the results
+plot(Soc1_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+
+```{r}
+#For Sociality 2 
+
+#Checking the distribution
+ggplot(Soc2, aes(x=Soc2$Result)) + geom_density()
+
+Soc2L <- lmer(Result ~ Repetition + (1 | Individual),data = Soc2)
+shapiro.test(residuals(Soc2L))
+#Not normal, switch to binary data
+write.csv(Soc2,"C:/Users/ocean/Desktop/El Paso PhD/C_atrox_PROJECT/Experiment/Behavioral trials/PersonalityAnalysis_JAN23\\Soc2.csv", row.names=FALSE)
+
+Soc2B <- read.csv('Soc2.csv')
+
+#Doing the model with binaru data 
+Soc2_rpt <- rpt(ResultB ~ Repetition + (1 | Individual), grname = "Individual", 
+    data = Soc2B, datatype = "Binary", nboot = 1000, 
+    npermut = 0)
+print(Soc2_rpt)
+
+#Plotting the results
+plot(Soc1_rpt, grname = "Individual", scale = "link", cex.main = 0.8)
+```
+
+```{r}
+#Creating a correlation matrix to investigate behavioral syndromes without Soc1
+PersoW <- read.csv("Perso_wide.csv")
+PersoCor <- subset(PersoW, select = -c(Individual, Soc1))
+Cor <- cor(PersoCor, method = "kendall")
+```
+
+```{r}
+#Plotting the correlation matrix
+PlotCor <- corrplot(Cor, method = 'square', type = 'upper', col = COL2('BrBG', 10), 
+                    addCoef.col = 'black', tl.col = 'black',cl.ratio = 0.2, tl.srt = 45, tl.cex = 0.9,                      order = 'hclust', addrect = 2) 
+
+jpeg(filename = 'PlotCor.jpeg', width = 800, height = 800, units = "px") 
+     corrplot(Cor, method = 'square', type = 'upper', col = COL2('BrBG', 10), 
+              addCoef.col = 'black', tl.col = 'black',cl.ratio = 0.2, tl.srt = 45, tl.cex = 1.3,                           order = 'hclust', addrect = 2)
+dev.off()
+```
+
+```{r}
+#Testing significance of correlation
+MPersoCor <- as.matrix(PersoCor)
+SCor2 <- rcorr(as.matrix(MPersoCor, type = c("spearman")))
+SCor2
+#Isolating the p-value from Scor2
+p_value <- round(SCor2[["P"]], 4)
+p_value
+upperPvalue <- upper.tri(p_value)
+upperPvalue
+
+pvalue1 <- cor.mtest(Cor, conf.level = 0.95)
+
+PlotCor2 <- corrplot(Cor, method = 'square', type = 'upper', col = COL2('BrBG', 10), 
+                    tl.col = 'black',cl.ratio = 0.2, tl.srt = 45,                                                                order = 'hclust', addrect = 2, 
+                    p.mat = pvalue1$p, sig.level = 0.05, insig = "label_sig", pch.col = 'grey20', 
+                    pch.cex = 1.2) 
+PlotCor2
+
+jpeg(filename = 'PlotCor2.jpeg', width = 700, height = 700, units = "px") 
+               corrplot(Cor, method = 'square', type = 'upper', col = COL2('BrBG', 10), 
+                    tl.col = 'black',cl.ratio = 0.2, tl.srt = 45,                                                                order = 'hclust', addrect = 2, 
+                    p.mat = p_value, sig.level = 0.05, insig = "label_sig", pch.col = 'black', 
+                    pch.cex = 1.5, tl.cex = 1.5) 
+dev.off()
+
+pdf("PlotCor2.pdf",width = 6, height = 6, bg = "white",colormodel = "cmyk", paper = "A4")
+    corrplot(Cor, method = 'square', type = 'upper', col = COL2('BrBG', 10), 
+                    tl.col = 'black',cl.ratio = 0.2, tl.srt = 45, tl.cex = 1,                                                    order = 'hclust', addrect = 2, 
+                    p.mat = pvalue1$p, sig.level = 0.05, insig = "label_sig", pch.col = 'grey20', 
+                    pch.cex = 1.2) 
+dev.off() 
+
+```
+
+```{r}
+#Calculating a dissimilarity matrix for cluster analysis
+Dis <- 1-abs(Cor)
+Dis
+
+#Cluster analysis for behavioral syndromes
+agnes <- agnes(Dis, diss = TRUE, method = "ward")
+summary(agnes)
+plot(agnes)
+?
+
+AgnesPlot <- fviz_dend(x = agnes, cex = 0.9, lwd = 0.8, k = 3,
+             k_colors = "Dark2",
+             rect = TRUE, 
+             rect_border = "Dark2", 
+             rect_fill = TRUE,
+             horiz = TRUE,
+             main = "Cluster dendrogram of the different behavioral trials",
+             ggtheme = theme_gray())
+AgnesPlot
+
+ggsave('AgnesPlot.pdf')
+
+
+```
+
+
+```{r}
+#Silhouette plot to check the best number of cluster to use
+pr <- pam(Dis, 3)
+str(si <- silhouette(pr))
+(ssi <- summary(si))
+plot(si)
+
+#Trying to find the best number of clusters
+fviz_nbclust(Dis, hcut,  method = "silhouette", k.max = 5) + theme_minimal()
+
+#Checking all methods using clValid
+intern <- clValid(Dis, nClust = 2:6, 
+                  clMethods = c("hierarchical","kmeans","pam"), validation = "internal")
+summary(intern)
+#The optimal value of cluster is 3.
+```
+
+```{r}
+#Looking at the effects of morphometrics on personality
+PersoM <- read.csv("PersonalityResults_withMORPHO.csv")
+
+#For activity
+ActM <- subset(PersoM, PersoM$Trial == "Act")
+lmAct <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = ActM)
+shapiro.test(residuals(lmAct))
+#residuals are normal so we can use a linear mixed model
+summary(lmAct)
+#Effect of sex on activity.
+ggplot(ActM, aes(x=Sex, y=Result))+
+  geom_boxplot()
+```
+
+
+```{r}
+#For Aggression 1 
+Agg1M <- subset(PersoM, PersoM$Trial == "Agg1")
+#residuals are not normal so I used a generalized linear mixed model with a binomial distribution
+glm1 <- glmer(Result ~ Sex + SVL + Mass +(1|Individual), family = binomial(link="logit"), data =Agg1M, 
+             control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+summary(glm1)
+#No effect of size or sex here but warning on the glm 
+dof(glm1, method = "betwithin")
+```
+
+
+```{r}
+#For Aggression 2
+Agg2M <- subset(PersoM, PersoM$Trial == "Agg2")
+lmAgg2 <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = Agg2M)
+shapiro.test(residuals(lmAgg2))
+#residuals are not normal so we log transformed the data and it is normal now
+Agg2M$log =log(Agg2M$Result)
+lmAgg2B <- lmer(log ~ Sex + SVL + Mass + (1|Individual), data = Agg2M)
+summary(lmAgg2B)
+#No effect of size or sex here
+```
+
+
+```{r}
+#For boldness_head out
+BoldHM <- subset(PersoM, PersoM$Trial == "Bold ")
+BoldHM1 <- subset(BoldHM, BoldHM$Result_type == "seconds_headOUT" )
+lmBoldHM <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = BoldHM1)
+summary(lmBoldHM)
+#No effects of size or sex. 
+```
+
+```{r}
+#For boldness_body out
+BoldBM <- subset(BoldHM, BoldHM$Result_type == "seconds_bodyOUT" )
+lmBoldBM <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = BoldBM)
+summary(lmBoldBM)
+#No effects of size or sex. 
+```
+
+```{r}
+#For exploration 1_Latency to move
+Explo1LMM <- subset(PersoM, PersoM$Trial == "Explo1")
+Explo1LMM1 <- subset(Explo1LMM, Explo1LMM$Result_type == "seconds_LatencyMovement")
+lmExplo1LMM <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = Explo1LMM1)
+summary(lmExplo1LMM)
+#No effects of size or sex. 
+```
+
+```{r}
+#For exploration 1_arena
+Explo1AM <- subset(Explo1LMM, Explo1LMM$Result_type == "seconds_arena")
+lmExplo1AM <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = Explo1AM)
+summary(lmExplo1AM)
+#No effects of size or sex. 
+```
+
+```{r}
+#For exploration 2_squares
+Explo2M <- subset(PersoM, PersoM$Trial == "Explo2")
+Explo2SM <- subset(Explo2M, Explo2M$Result_type == "squares")
+lmExplo2SM <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = Explo2SM)
+summary(lmExplo2SM)
+#No effects of size or sex. 
+```
+
+```{r}
+#For exploration 2_squares
+Explo2TM <- subset(Explo2M, Explo2M$Result_type == "tong_flicks")
+lmExplo2TM <- lmer(Result ~ Sex + SVL + Mass + (1|Individual), data = Explo2TM)
+summary(lmExplo2TM)
+#No effects of size or sex. 
+dof_kenward(lmExplo2TM)
+```
+
+```{r}
+#For Sociality 2
+Soc2M <- subset(PersoM, PersoM$Trial == "Soc2")
+#residuals are not normal so I used a generalized linear mixed model with a binomial distribution
+glm2 <- glmer(Result ~ Sex + SVL + Mass +(1|Individual), family = binomial(link="logit"), data =Soc2M, 
+             control=glmerControl(optimizer="bobyqa",optCtrl=list(maxfun=2e5)))
+summary(glm2)
+#No effect of size or sex but warning on the glm.
+dof(glm2, method = "betwithin")
+```
+
+```{r}
+#Graphs for effects of sex on activity
+Boxplot <- ggplot(ActM, aes(x=Sex, y=Result, color=Sex)) + 
+  geom_boxplot(fill = c("azure4", "cadetblue4")) +
+  scale_color_manual(values = c("darkslategrey", "darkslategrey")) + 
+  geom_jitter(shape=16, position=position_jitter(0.05)) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  panel.background = element_blank(), axis.line = element_line(colour = "black"))
+
+ggsave("Boxplot.pdf")
+
+```
+
